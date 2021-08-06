@@ -327,7 +327,7 @@ function App() {
               </TableContainer>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion elevation={3}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-label="Expand"
@@ -363,7 +363,7 @@ function App() {
               </div>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion elevation={3}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-label="Expand"
