@@ -134,7 +134,7 @@ function App() {
     const createDBUser = [];
     const grantUser = [];
     for (let item of form.talent) {
-      const username = `${form.class}${form.batch}${item}`;
+      const username = `${form.class}${form.batch}${item.replace(/\s/g, "")}`;
       const password = makeid(6);
       dataUser.push({
         name: item,
@@ -165,17 +165,17 @@ function App() {
       setShowDialog(true);
     } else {
       resetData();
-      setShowSnackbar({
-        ...showSnackbar,
-        status: true,
-        msg: "Success Reset Data !",
-        severity: "success",
-      });
     }
   };
 
   const resetData = () => {
     localStorage.clear();
+    setShowSnackbar({
+      ...showSnackbar,
+      status: true,
+      msg: "Success Reset Data !",
+      severity: "success",
+    });
     setForm({
       class: "",
       batch: "",
