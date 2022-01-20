@@ -34,12 +34,21 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MuiAlert from "@material-ui/lab/Alert";
 
 function makeid(length) {
-  var result = "";
-  var characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  let result = "";
+  let charactersC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let charactersCLength = charactersC.length;
+  for (let i = 0; i < 1; i++) {
+    result += charactersC.charAt(Math.floor(Math.random() * charactersCLength));
+  }
+  let charactersL = "abcdefghijklmnopqrstuvwxyz";
+  let charactersLLength = charactersL.length;
+  for (let i = 0; i < length; i++) {
+    result += charactersL.charAt(Math.floor(Math.random() * charactersLLength));
+  }
+  let number = "0123456789";
+  let numberLength = number.length;
+  for (let j = 0; j < 2; j++) {
+    result += number.charAt(Math.floor(Math.random() * numberLength));
   }
   return result + "!";
 }
@@ -135,7 +144,7 @@ function App() {
     const grantUser = [];
     for (let item of form.talent) {
       const username = `${form.class}${form.batch}${item.replace(/\s/g, "")}`;
-      const password = makeid(7);
+      const password = makeid(4);
       dataUser.push({
         name: item,
         username,
