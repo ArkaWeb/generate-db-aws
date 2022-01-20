@@ -41,7 +41,7 @@ function makeid(length) {
   for (var i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
-  return result;
+  return result + "!";
 }
 
 function Alert(props) {
@@ -135,7 +135,7 @@ function App() {
     const grantUser = [];
     for (let item of form.talent) {
       const username = `${form.class}${form.batch}${item.replace(/\s/g, "")}`;
-      const password = makeid(6);
+      const password = makeid(7);
       dataUser.push({
         name: item,
         username,
